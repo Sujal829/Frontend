@@ -1,0 +1,105 @@
+Interview Qs
+
+1. What are the limitations of react building large scale app.?
+
+    - MVC model
+    - React is only V=view
+    - It's not a framework like Angular
+    - Needs external libraries for routing, stage, etc
+    Example:
+        react-router/react-router-dom
+        redux
+
+2. How does the react manage the Virtual DOM, and what are the benefits?
+    - creates the copy of real DOM in memory and compares changes
+    - reconcilation process
+    - React updates only changed nodes -> faster in performance
+    - setCount(count+1) - invoke the change or life cycle
+
+3. Can react hooks fully replace Redux for state management?
+    - Not fully
+    - Hooks manages the local state
+    - For complex gloabl state we need Redux
+
+4. What are the best practice for managing state in large react apps.?
+    - lift state up poperly
+    - Use context wisely
+    - Use Redux/zustand for global state
+    - Folder structure by feature
+
+5. How would you optimize performance in a React app with large component trees?
+    - code splitting (Suspense, lazy loading, webpack or gulp)
+    - useMemo
+    - memo()
+    - usecallback()
+    - virtualised libraries (view port DOM generator)
+
+6. Explain React Strict Mode and it's impact on development?
+    - helps to detect unsafe lifecycle methods
+    - Side effects are called twice in development mode only
+
+7. How can we prevent unnecessary re-renders?
+    - React.memo(MyComponent);
+    - Renders only if props changes
+
+8. What is react fiber and what version did it got introduced?
+    - React 16+
+    - Enables the incremental rendering
+    - Priorities the lement, nodes or component for user perspective
+    - better performance
+    - useTransition hook can be used
+
+9. What is the useMemo vs usecallback?
+    - useMemo - handles the large calculation and returns the value
+    - useMemo(()=> compute(),[dep]); 
+
+    - usecallback - stores the reference of handler which are passed as props to child 
+    - useCallback(()=>fn(),[dep]) - returns function
+
+10. How woudl you implement dynaic form handling and validation in react?
+    - const [form, setForm] = useState({});
+    - <form onSubmit>
+        <input name="firstnm" value={form.firstnm} onChange={handler}/>
+        <input name="lastnm" value={form.lastnm} onChange={handler} />
+        </form>
+
+        setForm((prev)=> {..prev, [name]: e.target.value})
+    - update using name attribute dynamically
+    - validation -> user libraries like Formik or custom logic 
+                -> Yup or Zod 
+11. How components are Lazy loaded?
+    - const Home = React.lazy(()=> import('./Home'));
+    - Loads component only when needed-> improve performance by reducing bundle size
+
+12. How can we handle errors in react component?
+    - Error boundaries
+    - create ErrorBoundary component or use existing librarie and wrap your all components into it
+    - ErrorBoundary component can only be created using Class component or Container
+    - class ErrorBoundary extends Component {
+        componentDidCtach(error){
+
+        }
+    }
+    <ErrorBoundary>
+            <....Childs ..
+            />
+    </ErrorBoundary>
+    - Application should not get crashed or White screen rather it should show a fallback 
+    - Catches JS error in child component
+
+13. What are the benefits of SSR?
+    - Server Side rendering
+    - framework like NextJS can be used to create SSR React Application
+    - Better SEO (Search Engine Optimization)
+    - Faster first load
+    - Better in performance
+
+14. Stlying approaches
+    - CSS files - import './style.css'
+    - CSS modules - import Style from './style.module.css'
+    - Styled component - const div = Styledcomponet.div` write css here`
+    - bootstrap
+    - tailwind
+    - librarie with ready components, reactStrap,MUI, Ant Design, SemanticUI, https://www.radix-ui.com/
+
+

@@ -1,0 +1,30 @@
+Summary:
+ 
+ 1. useState
+ 2. useEffect
+ 3. useLayoutEffect
+ 4. useContext
+ 5. useRef
+ 6. useMemo and React.memo
+ 7. useCallback
+ 8. useReducer: alternate of useState but manages the complex state transition
+
+
+ 9. useDefferedValue
+ 10. useOptimistic
+ 11. useActionState
+ 12. useId
+ 13. useSyncExtrnalStore
+ 14. useTransition
+ 15. use
+
+
+ - useReducer:
+    synatx: const [state, dipatch] = useReducer(reducer, initialState);
+    - dipatch: a function that triggers action
+    - reducer: a pure function (state, action) => newState
+    - dipatch(action): used to send an action to update the state
+
+API Calls
+    fetch: Browser API which return promise
+    axios library

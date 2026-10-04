@@ -1,0 +1,12 @@
+.btn {
+    background-color: green;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 8px;
+}
+
+.box {
+    background-color: blueviolet;
+    padding: 20px;
+    color: black;
+}

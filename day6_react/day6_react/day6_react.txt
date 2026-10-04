@@ -1,0 +1,28 @@
+Summary:
+ React is JS library
+ React is based on component architecture
+    component?: 
+
+React class components:
+
+boilerplate(small working app)
+tool? Vite(VueJS)
+
+NodeJS + npm 
+
+npm create vite@latest <APP_NAME>
+
+How to run application?
+go inside project folder
+ -> /<APP_NAME>/ npm run dev
+
+
+How to run the  code if no node_module folder is found
+
+Go inside project folder and run below command:
+	npm install
+
+then you will see node_module folder once installation is done 
+
+to run the code use below command:
+	npm run dev

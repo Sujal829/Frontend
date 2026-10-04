@@ -1,0 +1,26 @@
+Summary:
+- Router
+- Interceptor 
+- Redux using redux toolkit
+- Services
+- slice(actions, reducers)
+- handled accessToken and refreshToken
+
+Authentication vs Authorization?
+
+What is Authentication?
+ - Who you are?
+ - Login (verified user or authenticated user)
+ - Private Routes
+
+What is Authorization?
+ - Role Base access (RBAC)
+ - ProtectedRoutes
+
+Custom hooks?
+- reusable
+- One logic at one place
+
+- Rules:
+    - it should start with "use" keyword
+    

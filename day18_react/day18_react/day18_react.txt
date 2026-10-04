@@ -1,0 +1,41 @@
+Summary:
+ Context API
+ Fetch
+ Axios
+
+ Styling in React?
+ Event handling?
+ 
+  - Styling using CSS (Inline)
+  - External css
+  - module.css
+  - Styled components
+    install package
+        npm i styled-components
+  - bootstrap
+        install bootstrap and import the bootstrap.min.css file
+         npm i bootstrap
+
+         go to main.jsx and import the below statement
+            import 'bootstrap/dist/css/bootstrap.min.css';
+            
+  - Tailwind css
+    for Existing app
+        npm install -D tailwindcss postcss autoprefixer
+        npm tailwindcss init -p
+
+        tailwind.config.js
+            export default {
+                content: [
+                    "./index.html",
+                    "./src/**/*.{js, ts, jsx, tsx}",
+                ],
+                theme: {
+                    extend: {},
+                },
+                plugins: []
+            }
+    index.css or global.css (to active the tailwind style)
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;

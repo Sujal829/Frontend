@@ -1,0 +1,27 @@
+Summary:
+Lifecycle phases and Methods
+
+1. Mounting
+2. Updating
+3. Unmounting
+
+1. Mounting: 
+    When component is created and inserted into the DOM.
+    constructor(props) -> initialise state and binds the methods
+    render() -> returns JSX
+    componentDidMount() - runs after the component is first rendered.
+
+2. Updating:
+    Occurs when props or state change and component re-renders
+    render() -> again returns JSX
+    componentDidUpdate(prevProps, prevState) -> runs after the update
+    shouldComponentUpdate(nextProps, nextState) -> to stop unnecessary re-rendering
+
+3. Unmounting:
+    when the component is removed from the DOM.
+    componentWillUnmount()-> cleanup(timer, event listerns etc).
+
+Error handling:
+    componentDidCatch(error, info) -> for error biundaries.
+
+StrictMODE: due to strictmode the lifecycle gets called twice only in Development ENV.

@@ -1,0 +1,52 @@
+Summary:
+
+TYpe of Routers?
+BrowserRouter
+HashRouter
+HistoryRouter (unstable)
+MemoryRouter
+Router
+StaticRouter (nodejs+express) (SSR)
+
+React virtual DOM?
+- is a lightweight copy of the real browser DOM
+- React uses this to decide what needs to be updated in the UI, withou touching real DOM directly
+    - real DOM is expensive (time), i.e it is slow
+- React compares the old virtual DOM with coming new virtual DOM -> this process is called diffing
+- After comparing, react updates only the parts of the real DOM that changed, but not everything.
+
+What is React Fiber?
+- React Fiber is new internal engine, introduced in React 16 that improved:
+    - Speed
+    - Smooth rendering
+    - handling large UI updates
+    - Splitting heavy rendering work into small chunks (multitasking)
+
+    - virtual DOM exist, Fiber is the scheduler + renderer that decides
+        => Operations:
+            - When to update
+            - What to update
+            - How fast to update
+            - Whether to pause, continue or cancel a render
+        
+    - Allows react to render UI in small pieces so the browser is never blocked
+
+    - useTransition() : Do the heavy work in background
+
+
+What is React Flux?
+    - Flux is state management pattern created ny Facebook for react application
+    - it follows one way data flow architecture
+
+    Example: View -> Action -> Dispatcher -> Store -> View
+        - UI sends actions->
+        - Dispatcher routes the actions->
+        - Store udpates state ->
+        - UI re-renders
+
+Why do we need Flux?
+    - One central source of state/data (store)
+    - Predictable state udpates
+    - One direction data flow 
+    - Easy to track the changes
+

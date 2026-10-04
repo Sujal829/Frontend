@@ -1,0 +1,35 @@
+Typescript:
+
+Git hub/git flow, gitlab, bitbucket, SVN:
+- code versioning
+
+Branching Statergy:
+
+main (prod)
+    release/pre-main (pre-prod)
+        stage/uat (customer)
+            develop (base)
+                feature/login
+                feature/register-form
+                feature/redux-setup
+                bugfix/login
+
+Auto deployment = CI/CD pipelines - DevOps person is responsible
+PR = Pull request / CR Change request
+Merge => Pr is merged into base branch or pointed branch
+
+Env:
+Production (Live application)
+pre-Production - Sanity testing is performed
+
+stage/uat -> Customer testing + regression
+
+qa/test -> QA or tester performs testing of the application + regression
+
+develop - developer testing / unit testing + system testing + integrated testing
+
+https://dev-myapp.com 
+https://test-myapp.com 
+https://uat-myapp.com 
+https://pre-prod-myapp.com 
+https://www.myapp.com 

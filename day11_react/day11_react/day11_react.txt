@@ -1,0 +1,47 @@
+Summary:
+
+React hooks:
+    Allows you to implement features like State, lifecycle and context etc
+    1. useState: To define local state or manage them
+    2. useEffect: used to implement lifecycle or to handle the sideeffects
+    3. useLayoutEffect
+    4. useContext: used to manage global state & avoid props Drilling
+    5. useRef: used to access the element in the DOM
+    6. useMemo
+    7. useCallback
+    8. useReducer
+    9. useId
+    10. useTransition
+
+    What is propsDrilling?
+        passing props from parent component to -> ch-> gch->ggch-> ...so on
+
+    To avoid propsDrilling we use Context API
+
+    What is context API?
+    - The react context API is used to share data between components
+    without passing props manually through every level of the component tree.
+
+    How context works?
+    There are 3 main parts:
+        1. Create context -> React.createContext()
+        2. Provide value -> Provider <Provider> ...<Consumers/> </Provider>
+        3. Consume value -> Cosumers useContext() to access the props
+
+    useLayoutEffect():
+
+DOM mutation? means a change to the DOM tree
+    - Adding, updating or removing elements
+    - changing attributes or styles
+    - updating text content
+
+In React every time your component re-renders,
+    1. Calculates what changes are needed (via the Virtual DOM - diffing algorithm)
+    2. Applies those changes (mutation) to the real/actual DOM
+
+useLayoutEffect: is synchronous hook
+
+Render Phase-> React updates the DOM(mutation)
+                -> useLayoutEffect() 
+                 -> Browser paints the udpated UI
+                    -> useEffect()

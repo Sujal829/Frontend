@@ -1,0 +1,116 @@
+Summary:
+
+React is a JS library
+React works on component based Archi.
+React is View in M"V"C
+React is used to build SPAs (single page application)
+React works on virtual DOM
+React is less expensive in terms of DOM manipulation
+
+How we can create a boilerplate (basic application)?
+    using tools
+    1. CRA (create react app  outdated)
+    2. vite (latest and recommended)
+
+    1. CRA:
+        - Tool created by facebook to help developers quickly start a new React Project.
+        - It sets up everything for you - Webpack, babel(compiler or trnspiler), development server etc (file.jsx or file.js or file.ts or file.tsx)
+        - babel : converts modern JS (ES6+) into backward compatible js that can run on the older browser or ENV. 
+        - command: npm create-react-app my-app
+    
+    2. Vite:
+        - A newer and faster tool built by the creator of Vue.js (Evan you)
+        - It also helos you start a new React Project- but uses a different appraoch that makes it muc faster and lighter.
+        - command: npm create vite@latest my-app
+
+    
+    CRA vs Vite:
+    1. CRA uses webpack, webpack bundles your entire app before starting the server
+    2. When you save a file, webpack rebuilds many parts again - slow refresh
+
+    Vite:
+    1. uses ES build and native browser modules
+    2. Vite starts server instantly -> doesn't bundle everything first.
+    3. Compiles file you are currently viewing
+    4. Refresh or hot reloading is faster
+
+
+How to create react App using tools?
+command: npm create vite@latest myapp
+
+How to run the app: npm run dev
+
+How to install all packages: npm i 
+
+How to install specific package: npm i <PACKAGE_NAME>
+
+Note: Vite requires Node > v20.19+
+
+React development Tool: https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+
+
+Folder Structure:
+my-app/
+├── node_modules/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+
+
+Root folder: project name folder i.e "myapp"
+
+- node_modules/ 
+    - supportive dependencies are kept here (vite, React, ReactDOM, etc)
+    - npm install command will install the package and unpack it here
+    - Do not edit
+
+to install all package: (to update node_module or if node_module is deleted):
+    command: npm i or npm install
+
+- public/
+    - Stores static files (like, logos, icons, or mock/dummy data)
+    - Files are not processed or bundled - vite just copeis them to the final dist/ or build/ folder suring build.
+
+- src/: our actual react code
+    - assets/ 
+        - images
+        - icons
+        - font file
+        - css
+        - js
+
+    -/main.jsx
+        - entry point
+        - it mounts the react aapp unto html <div id="root"> element
+
+    -/App.jsx
+        - The main component of your react app.
+        - It is the first component rendered after the startup
+        - root UI or your app.
+
+-package.json
+    - contains project metadata and dependencies
+    - also has npm scripts like dev, build etc
+    - npm command search for package.json 
+
+-package-lock.json:
+    npm creates this file to Lock the packages version which was installed at speicifc period/time
+
+-Readme:
+    - maintain the technical documentation of  application
+    - basic details of application along with it's scope
+
+- vite.config.js:
+    - is configuration filer for Vite.
+    - controls the react application during development

@@ -1,0 +1,97 @@
+Summary:
+
+ - Virtual vs Fiber (useTransition())
+ - Flux
+    - One way data flow archi.
+    - View -> Action -> Dispatcher -> Store -> View
+
+    - Multiple Store
+    - one way data flow
+    - Dispatcher routes the Action
+    - loose structure
+
+- Redux
+    - Only one Store
+    - Pure function called reducer
+    - No Dispatcher
+    - predictable, strict structure
+    - Library
+
+    Middlewares?
+        - Middlewares is a function that sits in the middle of a process and 
+        can modify or control the flow before it reach to final step.
+     
+     Type of Middlewares: Thunk and Saga
+
+     Why we need Redux?
+        - Global state
+        - State chande is predictable
+        - No more props drilling
+        - Better structure (modular)
+        - Supports Middlewares (for asynchronous operations like API call using Thunk or Saga)
+
+
+    What is redux Thunk?
+     - It is a Middleware
+     - Allow us to write asynchronous logic inside action creator
+     - Thunk allows ou to dispatch function instead of onl dispatching objects
+
+     Without Thunk
+
+     dispatch(action());
+
+     With Thunk
+
+     dispatch((dispatch)=>{
+        // asynchronous logic
+     })
+
+
+How to use redux:
+    install
+
+    npm i redux
+    npm i react-redux
+
+
+1. Install Redux tools
+
+   Install: redux, react-redux
+
+2. Create a Redux store
+
+   Make a root reducer
+   Create the store using createStore() (or configureStore if using Redux Toolkit)
+
+3. Wrap your app with <Provider>
+
+   Import Provider from react-redux
+   Wrap your root component so all components can access the store
+
+4. Create actions
+
+   Actions are simple objects with a type and sometimes a payload
+
+5. Create reducers
+
+   Reducers return new state based on the action type
+
+6. Connect your class component to Redux
+
+   Use the connect() function from react-redux
+
+7. Use mapStateToProps
+
+   This function sends Redux state as props to your component
+
+8. Use mapDispatchToProps
+
+   This function sends action-dispatching functions as props
+
+9. Access Redux data in your class component
+
+   Use this.props.someState
+
+10. Dispatch actions in your class component
+    Use this.props.someAction()
+

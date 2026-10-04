@@ -1,0 +1,73 @@
+Interview Questions:
+    1. What are the limitations of React in large-scale application?
+        - No built-in State Management system(Redux/Zustand/MobX etc).
+        - Frequent re-renders if poorly optimized
+        - Difficult to remember hooks and lifecycle methods.
+        - SEO issues without SSR, because React is CSR based.
+        - Boilerplate code for small applications.
+        - No standard folder structure, to maintain we need frameworks like Next.js(App and page routing) or Gatsby.
+    
+    2. Difference between Real Dom and Virtual Dom?
+        - Real DOm updates are expensive.
+        - Virtual DOM is a lightweight representation of the real DOM.
+        - It's faster than the real DOM.
+        - It's used to update only the necessary parts of the UI.
+        - React calculates diff and updates the minimal changes on the real DOM.
+    
+    3. What is reconciliation?
+        - Previous virtual DOM is compared with the new Virtual DOM, with Diffing algo.
+            and updated the minimal change
+        - Uses keys to identify changes
+    
+    4. How many elements are returned by render method?
+        - return only one element
+        - return(<div></div> <div></div>) this is not allowed
+    
+    5. What is React Fiber?
+        - Fiber is Asycn and Virtual DOM is Synchronous
+        - New reconciliation engine (React 16+)
+        - Enables interruptive rendering
+        - Prioritizes updates (user input > rendering Ui or data or list etc)
+        - Smooth UI, no blocking main thread.
+        - using usetransition() hook
+
+    6. What is Strict Mode?
+        - <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        - Development only checks
+        - Double invokes the lifecycle and effects
+        - Helps catch side effects
+        - Doesnot work in Production ENV
+
+    7. Controlled vs Uncontrolled components?
+        - Controlled components inputs/form etc are controlled by React using State
+        - Controlled components can have re-rendering based on inputs and the states
+        - Reducer the performance
+
+        - Uncontrolled components input/form are controlled by DOM
+        - No re-rendering
+        - we use useRef() or React.createRef()
+        - Improves performance
+        - libraries like, formik
+    
+    8. How can we improve performance?
+        - usememo()- memoize the value
+        - usecallback() - memoize refrence if the function
+        - React.memo() - Memoize the whole component
+        - custom hooks - reusable logic
+        - Higher Order Component - reusable logic const MOdifiedList = withLoading(List), <MOdifiedList />
+        - Lazylaoding (<Suspense fallback={<p>Loadin...!</p>}>, React.lazy = import(/path))
+    
+    9. useEffect vs useLayoutEffect?
+        - useEffect is Async
+        - useEffect invokes after paint
+        - useEffect used to handle side effectds like API call
+        - useLayoutEffect is Sync
+        - useLayoutEffect invokes before paint
+        - useLayoutEffect is used to handles task like measurement
+    
+    10. Which lifecycle methods are supported by useEffect?
+        - componentDidMount - by passing empty array dependency
+        - componentDidUpdate - by passing state or props are dependency in to array dependency
+        - componentWillUnMount - clean up

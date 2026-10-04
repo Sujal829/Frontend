@@ -1,0 +1,33 @@
+Summary:
+    Routings
+    Try useSearchParams?
+
+protected Routes:
+
+Role based Access
+- RBAC
+
+BrowserRouterBrowserRouter
+Use this for normal websites.
+Works when the server is set up to handle React routes.
+Do not use it if refreshing a page causes a 404 error on your hosting.
+
+HashRouter
+Adds a “#” in the URL.
+Use this when your hosting cannot support BrowserRouter.
+Do not use it if you want clean URLs or good SEO (Search Engine Optimization).
+
+MemoryRouter
+Does not use the browser URL. Everything is stored in memory.
+Use this for testing or apps that are not in a browser (like React Native).
+Do not use it if you want the real URL to change.
+
+HistoryRouter
+Lets you use your own custom history object.
+Use this when you need special control over navigation.
+Do not use it for simple apps; BrowserRouter is usually enough.
+
+StaticRouter
+Used on the server, not in the browser.
+Use this when doing server-side rendering.
+Do not use it for normal browser apps.

@@ -1,0 +1,98 @@
+Typescript:
+
+Git hub/git flow, gitlab, bitbucket, SVN:
+- code versioning
+
+Branching Statergy:
+
+main (prod)
+    release/pre-main (pre-prod)
+        stage/uat (customer)
+            develop (base)
+                feature/login
+                feature/register-form
+                feature/redux-setup
+                bugfix/login
+
+Auto deployment = CI/CD pipelines - DevOps person is responsible
+PR = Pull request / CR Change request
+Merge => Pr is merged into base branch or pointed branch
+
+Env:
+Production (Live application)
+pre-Production - Sanity testing is performed
+
+stage/uat -> Customer testing + regression
+
+qa/test -> QA or tester performs testing of the application + regression
+
+develop - developer testing / unit testing + system testing + integrated testing
+
+https://dev-myapp.com 
+https://test-myapp.com 
+https://uat-myapp.com 
+https://pre-prod-myapp.com 
+https://www.myapp.com 
+
+
+Git hub
+- is a tool use to mantain the code versioning
+Firstly install Git on machine: 
+https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop?platform=windows
+    Set the user name and email ID to you machine
+    git config --global user.email "abc@gmail.com"
+    git config --global user.name "ab.c"
+    git config list 
+
+ref: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
+- create Repository on github
+- Clone the Repository
+    if we are going to use ssh authentication
+    putty application is use to create SSH public key
+
+    What all things should not be pushed to github?
+    - Any private/public key 
+    - .env file
+    - nodemodules
+    - build/dist folder
+    - any personal data
+
+Clone :
+git clone https://github.com/<Project_name>/<Repo_Name>/
+
+- git branch
+    - git checkout -b <NEW_BRANCH_NAME> Creates new branch and checkout you to the new branch
+        OR
+    To create New branch: 
+        - git branch <NEW_BRANCH_NAME>
+    To switch the branch:
+        - git checkout <EXISTING_BRANCH_NAME>
+    
+    To update the local to Remote:
+    - git push origin stage or git push --set-upstream origin stage
+    
+To push the code to the branch:
+    - git status  (to check what all change we want to push)
+    - git add . (All files will be moved to staged changes )
+    - git commit -m "REASON or Summary of added files"
+    - git push origin <BRANCH_NAME>
+
+    To start the development:
+    - git pull origin develop
+    
+    - feature/login create this branch from develop branch only
+     - push your changes then create a pullrequest from Git UI buy clicking on New Pullrequest 
+
+
+     reverse Statergy:
+        Base or parent to child branch creation 
+            Pull request must be into same reverse order
+             child - parent
+
+            main -> stage -> develop-> feature/
+                                    -> feature/
+
+                                    - Pr from feature/ to develop
+                                    - Pr from feature/ to develop
+                                                develop -> stage -> main 

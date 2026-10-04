@@ -1,0 +1,74 @@
+Summary:
+ Context API
+ Fetch
+ Axios
+
+ Styling in React?
+ Event handling?
+ 
+  - Styling using CSS (Inline)
+  - External css
+  - module.css
+  - Styled components
+    install package
+        npm i styled-components
+  - bootstrap
+        install bootstrap and import the bootstrap.min.css file
+         npm i bootstrap
+
+         go to main.jsx and import the below statement
+            import 'bootstrap/dist/css/bootstrap.min.css';
+            
+  - Tailwind css
+    for Existing app
+        npm install -D tailwindcss postcss autoprefixer
+        npm tailwindcss init -p
+
+        tailwind.config.js
+            export default {
+                content: [
+                    "./index.html",
+                    "./src/**/*.{js, ts, jsx, tsx}",
+                ],
+                theme: {
+                    extend: {},
+                },
+                plugins: []
+            }
+    index.css or global.css (to active the tailwind style)
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+What is event handling in react?
+What are synthetic events?
+What is routing and how we can implement into React?
+
+What are synthetic events?
+ In React, synthetic events are React's own wrapper around the browser's native events.
+    e.i = ReactSyntheticEvents(BrowserNativeEvents)
+
+    <button onClick={handleClick}>Click</button>
+        The onClick is a synthetic event, not the browser's native event 
+    React wraps the browser event inside its SyntheticEvent object.
+
+Why react uses synthetic events?
+    1. Cross browser compatiblity
+        Different browser behave differently with native events.
+        React makes everything consistent.
+    
+    2. Event delegation
+        Instead of attaching events to every elements, it attches them at root and maps events efficiently.
+    
+    3. Works with React's Virtual DOM
+
+Event handling?
+
+
+Routing:
+https://reactrouter.com/6.30.2/router-components/browser-router
+
+BrowserRouter
+    Routes
+        Route (path, element)
+

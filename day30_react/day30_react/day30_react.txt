@@ -1,0 +1,59 @@
+Summary:
+- Router
+- Interceptor 
+- Redux using redux toolkit
+- Services
+- slice(actions, reducers)
+- handled accessToken and refreshToken
+
+Authentication vs Authorization?
+
+What is Authentication?
+ - Who you are?
+ - Login (verified user or authenticated user)
+ - Private Routes
+
+What is Authorization?
+ - Role Base access (RBAC)
+ - ProtectedRoutes
+
+Custom hooks?
+- reusable
+- One logic at one place
+
+- Rules:
+    - it should start with "use" keyword
+    
+* Controlled and uncontrolled components
+
+Controlled component:
+- React controls the form data
+- The value is stored in React state, not inside the DOM
+- we always use value={state} and onChange.
+
+When it is best to use?
+    - Validations
+    - Dynamic error messages
+    - Consition UI update
+    - Form that needs to be submitted to API
+
+uncontrolled component:
+- The DOM itself control the form data
+- we use ref to access the value
+- No React state for storing input
+- No rendering, which improves the component performance
+
+Best to use?
+- Very simple form
+- When you just want input values on Submit event/click
+
+formik library will help to avoid re-rendering of component when we have complex forms
+reference: https://formik.org/
+
+install formik:
+    npm i formik
+
+    For validation with formik we can use:
+    Yup or Zod
+    https://www.npmjs.com/package/yup
+    https://www.npmjs.com/package/zod

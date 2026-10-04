@@ -1,0 +1,13 @@
+Summary:
+ React hooks
+ useState, useEffect, useLayoutEffect, useContext, useRef
+
+ useRef: use to access the DOM element
+
+ useMemo: Memoizes the computed value
+
+ useCallback(): returns a memoized version of a callback function that only
+                changes when its dependencies changes
+
+React.memo():          To memoize the component we use React.memo()
+

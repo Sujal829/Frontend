@@ -1,0 +1,92 @@
+How to create react app from scratch
+
+steps:
+
+1. create a folder for your app 
+    mkdir myapp
+
+2. create a package.json 
+    npm init -y
+
+3. install all required dependencies
+    npm i react react-dom
+    npm i -D webpack webpack-cli webpack-dev-server
+    npm i -D babel-loader @babel/core @babel/preset-env @babel/preset-react
+    npm i -D html-webpack-plugin
+    npm i -D style-loader css-loader  =>(this css parser)
+    npm i -D file-loader  => (this is file parser like png, jpeg etc)
+
+4. create .babelrc file at root folder
+paste this code: 
+
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+
+5. create src folder
+    -> create main.js or index.js 
+6. create public folder
+    -> create index.html
+7. create webpack.config.js file inside root folder
+    use below code:
+    const HtmlWebpackPlugin = require("html-webpack-plugin");
+    const path = require("path");
+
+    module.exports = {
+        entry: './src/main.js',
+        output: {
+            path: path.resolve(__dirname, "dist"),
+            filename: "bundle.js",
+            clean: true
+        },
+        devServer: {
+            port: 3000,
+            open: true,
+            hot: true
+        },
+        module: {
+            rules:[
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: "babel-loader"
+                },
+                {
+                    test: /\.css$/,
+                    use: ["style-loader", "css-loader"]
+                },
+                {
+                    test: /\.(jpg|jpeg|gif|png)$/,
+                    use: {
+                        loader: 'file-loader',
+                    }
+                }
+            ]
+        },
+        resolve: {
+            extensions:[".js",".jsx"]
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: "./public/index.html"
+            })
+        ]
+    }
+
+8. copy and past the below script into package.json inside script object
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+9. create a component and start using 
+
+10. to run the app
+    npm start
+11. to create a build(production)
+    npm run build
+
+    you will see dist folder created 
+    to run the production build 
+        serve -s dist
+
+    install serve using below command
+        npm i serve -g
+    

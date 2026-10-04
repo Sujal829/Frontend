@@ -1,0 +1,45 @@
+Summary:
+
+Custom hooks / userdefined hooks
+
+Fetch() to call an API
+What is Axios?
+    - Js library used to make HTTP requests(GET, POST, PUT, PATCH and DELETE)
+    
+    How to use it?
+        - install the package 
+            npm i axios 
+        _ syntax:
+            import axios from 'axios';
+            import Axios from 'axios';
+
+            axios.[METHOD](URL)
+                .then(response => console.log(response) )    Axios doesn't need to convert the data as we do in fetch()-res => res.json()
+                .catch(err=> err)
+              
+Example:
+    axios.get(URL)
+                .then(response => console.log(response) )    Axios doesn't need to convert the data as we do in fetch()-res => res.json()
+                .catch(err=> err)
+
+    
+Fetch
+Built-in JavaScript API — no installation needed.
+Returns a Promise that resolves even on HTTP errors (e.g., 404, 500).
+Requires manually converting responses using .json().
+No built-in timeout feature (must code it manually).
+Doesn’t have interceptors (you handle headers and tokens manually).
+Lightweight — since it’s native to browsers.
+Harder to track upload/download progress.
+Needs a polyfill for older browsers.
+
+Axios
+External library — must install via npm install axios.
+Automatically parses JSON responses.
+Automatically throws errors for bad HTTP status codes.
+Supports request interceptors (great for auth tokens or logging).
+Has built-in timeout support.
+Easier syntax and cleaner code.
+Supports tracking upload and download progress.
+Works well with older browsers.
+Slightly larger bundle size (since it’s not built-in).

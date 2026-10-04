@@ -1,0 +1,25 @@
+Summary:
+
+React hooks: 
+    Are specal functions that let you "hooks into" React core features ; like state, lifecycle and context
+
+    Rules:
+        1. Only call hook at the Top level
+        2. Only call hooks from React Function
+        3. Custom hooks are create with keyword i.e "use" example "useAPI"
+
+List of hooks:
+1. useState(): Manage local state 
+2. useEffect(): To implement lifecycle methods OR run side effects
+3. useLayoutEffect(): Like useEffect but runs synchronously after DOM creation
+4. useContext(): Access values from React context, to create global state
+5. useRef(): To access the element from DOM
+6. useMemo(): Memoize a value to avoid recalculation
+7. useCallback(): Memoize a function to avoid re-creation 
+8. useReducer(): Manage complex state logic 
+9. useId(): Generae unique IDs for accessiblity
+10. useTransition(): Optimize rendering performance (React 18+)
+    
+
+What are propDrilling?
+ passing data from one component to nested components

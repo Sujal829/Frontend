@@ -1,0 +1,19 @@
+Context API:
+
+Which is built to overcome the props drilling issue.
+
+A ->B ->C -> D-> E ...nth
+  p-> p-> q -> p-> p ...pth
+
+Using context API we can define Global state
+
+Terms:
+    1. Provider -> To pass the global state to all the consumers
+    2. Consumer -> to access the global state
+
+    To create context we use React.createContext();
+    TO access the context we use useContext(MyContext);
+    To create Provider we use MyContext as instance
+        e:g -> <MyContext.Provider value={object}> 
+                    .....all consumers
+                </MyContext.Provider> 

@@ -1,0 +1,55 @@
+ReactJS:
+
+Component works with the lifecycle
+Phases:
+    1. Mounting
+    2. Updating
+    3. Unmounting 
+
+Error boundaries
+
+1.Mounting:
+    When the component is created and inserted into DOM.
+    constructor(props){
+        super(props) -> to invoke parent class constructor
+    }
+
+    render(){ 
+        return(<div></div>)
+    }
+
+    componentDidMount(){
+        // it gets execute after first render
+    }
+
+2. Updating:
+    Whenever state or props are changed re-renders the component
+
+    render(){
+        return(<>)
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        // invoke after state or props or re-render changed 
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        default returns true
+    }
+    if returned false -> No  re-rendering 
+
+3. Unmounting:
+    Whenever the component is removed from DOM 
+    componentWillUnmount(){
+        // cleanup
+    }
+
+State: is a storage 
+-Stores information
+-state can be changed
+-State stores any type of data
+
+
+Props: properties
+- Pass information to another component
+- Props cannot be changed

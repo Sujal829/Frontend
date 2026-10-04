@@ -1,0 +1,9 @@
+What is TypeScript (TS) .ts
+    - is JavaScript with types.
+    - it is subset of JavaScript
+Why use it?
+    - Catches error before running the code
+    - Autocomplete + intellisense
+    - Cleaner code + better performance
+    - Optional keys
+

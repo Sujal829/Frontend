@@ -1,0 +1,53 @@
+Summary:
+    Redux toolkit
+    -> Architecture?
+        View->action->dispatcher->reducer->store -> view (re-render)
+        What is the nature of redux?: Synchronous
+        Hw can make redux Asynchronous? using Middlewares (Thunk & saga)
+        Hw can I access a state?- useSelector()
+        Hw can I call an action? - useDispatch()
+
+Axios: It's library which allow you to make HTTP requests
+
+Why we need Intercepetor?
+ - Configuration of timeout
+ - Add Authorization token
+ - Refresh token
+ - Global error handling
+ - Configuration of request/ response
+ - Better than fetch
+
+- Request cancellation
+
+* Difference
+
+try{
+    const res = await axios.get('/products');
+}catch(err){
+    if(err.response.status = 401){
+
+    }
+    if(err.response.status = 403){
+        
+    }
+}
+
+With Axios + Intercepetor (Syntax)
+
+const axiosInstance = axios.create({
+    baseURL: 'https://fakestoreapi.com/',
+    timeout: 10000
+});
+
+axiosInstance.interceptors.response.use(
+    response=> response,
+    error=> {
+        handle error here
+          if(err.response.status = 401){
+
+        }
+        if(err.response.status = 403){
+            
+        }
+    }
+);

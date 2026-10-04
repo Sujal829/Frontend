@@ -1,0 +1,78 @@
+JS interview question set
+  
+  1. difference between let, const and Var?
+    - These are the declaratives used as prefix to define the variable.
+    - var function scope and hoisted with undefined
+    - let and const are blocked scoped and fall under Temporal Dead Zone
+        - Period between variable declaration and initialization 
+    - Using var we can reassigned and redeclare vairable
+    - Using let we can reassigned value but cannot redeclare
+    - Using const no redeclaration and reassigne
+  
+  2. What is the type of null? why is it object?
+    - type of null is an object
+    - it's historical bug in js
+    - null represents intentional absense of value
+
+  3. Explain Hoisting of variables and functions?
+    - vairable declaration and function declaration are hoisted
+    - function": fully hoisted
+    - variable declaration is hoisted and value is undefined
+    - let/const : hoisted but in TDZ (returns initialization error)
+
+  4. Event Delegation?
+    - use single event listner on a parent to handle child events
+    - why?: to imrpove the performance and dynamic elements (less code)
+
+  5. What is closures?
+    - A function that remembers vairables from its lexical scope
+    - Used in:
+        - Data hiding
+        - memoization
+        - Debounce
+        - throttle
+  
+  6. Shallow copy vs Deep copy?
+    - Shallow: -> references nested object, a = {...b}
+    - Deep copy - full copy b = JSON.parse(JSON.stringify(obj))
+
+  7. map() vs filter() vs forEach()?
+    map -  returns new array , use to transform 
+    filter - returns new array based on condition 
+    forEach- retuns NOTHING, use to side effects
+
+  8. Primitive vs Non- Primitive?
+    - Primitive: immutable
+        - string, number, boolean, null, undefined, symbol and bigInt
+    -Non-Primitive: mutable
+        - object, array and function
+
+  9. What is memory behavior (copying)?
+
+    var a = 10;
+    var b = a; ?? copied by value
+    a===b? true
+
+    let a = {};
+    let b = a; ?? copied by reference
+    a === b? true
+
+  10. Event loop?
+    - Asynchronous operation
+    - traffic controller
+    - priority:
+        - call stack
+        - microtasks queue (promises)
+        - macrotasks queue (timer)
+        - event loop checks if the call stack is empty then push the task from queue based on priority to the call stack
+
+  11. setTimeout vs setImmediate?
+
+  12. promises.all() vs promises.any() vs promises.race() and promises.allSettled()
+
+  13. Event bubbling vs capturing?
+    - bubbling:action/event traverse from child to parent (default behavior)
+    - capturing: action/event traverse from parent to child (intentional)
+  
+
+

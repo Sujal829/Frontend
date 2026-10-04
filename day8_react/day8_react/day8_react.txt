@@ -1,0 +1,55 @@
+React Hooks: are special function that "hooks into" React features like state, lifecycle or context from functional component
+    - all hooks start with "use" word/keyword
+    - there are two types of hooks
+        - userdefined (custom hooks)
+        - built in (from library)
+
+functional component:
+    stateless component: used for only  Presentational 
+    statefull component: where states are defined
+
+
+    stateless component
+
+    function Title(props){
+        return <div> {props.title}</div>
+    }
+
+    export default Title;
+
+    statefull component
+    
+    function Title(){
+        const [value, setValue] = useState();
+
+        return <div>
+            <input value={value} onChange={handler} /> 
+        </div>
+    }
+    
+    useState hook: 
+    syntax: const [state, setState] = useState(initialValue);
+
+        - Manage component state, defin state (like this.state in class)
+        - lets you add local state to a functional component
+        - state -> current value
+        - setState -> function to update the value
+        - initialValue-> starting value
+
+    useEffect hooks:
+        is used to implement componetDidMount, 
+        componentDidUpdate and componentWillUnmount lifecycle methods
+
+        syntax: useEffect(()=>{
+            // side effect and componetDidMount()
+        },[]);
+        []-> called array dependency
+        if array dependency[] is empty useEffect behaves like componetDidMount()
+        - get call after first render
+
+        useEffect(()=>{
+            // side effect or operation
+        },[state or props]);
+        -> if array dependency is not empty it is going to behave like componentDidUpdate()
+        -> if state or props get changed the useEffect will re-trigger
+        -> even if it has array dependency on mount it is going to get executed

@@ -1,0 +1,161 @@
+Interview Questions:
+    1. What are the limitations of React in large-scale application?
+        - No built-in State Management system(Redux/Zustand/MobX etc).
+        - Frequent re-renders if poorly optimized
+        - Difficult to remember hooks and lifecycle methods.
+        - SEO issues without SSR, because React is CSR based.
+        - Boilerplate code for small applications.
+        - No standard folder structure, to maintain we need frameworks like Next.js(App and page routing) or Gatsby.
+    
+    2. Difference between Real Dom and Virtual Dom?
+        - Real DOm updates are expensive.
+        - Virtual DOM is a lightweight representation of the real DOM.
+        - It's faster than the real DOM.
+        - It's used to update only the necessary parts of the UI.
+        - React calculates diff and updates the minimal changes on the real DOM.
+    
+    3. What is reconciliation?
+        - Previous virtual DOM is compared with the new Virtual DOM, with Diffing algo.
+            and updated the minimal change
+        - Uses keys to identify changes
+    
+    4. How many elements are returned by render method?
+        - return only one element
+        - return(<div></div> <div></div>) this is not allowed
+    
+    5. What is React Fiber?
+        - Fiber is Asycn and Virtual DOM is Synchronous
+        - New reconciliation engine (React 16+)
+        - Enables interruptive rendering
+        - Prioritizes updates (user input > rendering Ui or data or list etc)
+        - Smooth UI, no blocking main thread.
+        - using usetransition() hook
+
+    6. What is Strict Mode?
+        - <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        - Development only checks
+        - Double invokes the lifecycle and effects
+        - Helps catch side effects
+        - Doesnot work in Production ENV
+
+    7. Controlled vs Uncontrolled components?
+        - Controlled components inputs/form etc are controlled by React using State
+        - Controlled components can have re-rendering based on inputs and the states
+        - Reducer the performance
+
+        - Uncontrolled components input/form are controlled by DOM
+        - No re-rendering
+        - we use useRef() or React.createRef()
+        - Improves performance
+        - libraries like, formik
+    
+    8. How can we improve performance?
+        - usememo()- memoize the value
+        - usecallback() - memoize refrence if the function
+        - React.memo() - Memoize the whole component
+        - custom hooks - reusable logic
+        - Higher Order Component - reusable logic const MOdifiedList = withLoading(List), <MOdifiedList />
+        - Lazylaoding (<Suspense fallback={<p>Loadin...!</p>}>, React.lazy = import(/path))
+    
+    9. useEffect vs useLayoutEffect?
+        - useEffect is Async
+        - useEffect invokes after paint
+        - useEffect used to handle side effectds like API call
+        - useLayoutEffect is Sync
+        - useLayoutEffect invokes before paint
+        - useLayoutEffect is used to handles task like measurement
+    
+    10. Which lifecycle methods are supported by useEffect?
+        - componentDidMount - by passing empty array dependency
+        - componentDidUpdate - by passing state or props are dependency in to array dependency
+        - componentWillUnMount - clean up
+    
+    11. What is redux?
+        - It is used for state management
+        - 3rd party library, Entier application can be created only using redux lib.
+        - To handle Asycn behaviour 
+        - Redux has debugg tool
+    
+    12. this.state.name = 'Rj', will this cause re-rendering? - No
+        this.setState({}) will invoke the React update cycle then it will re-render the component
+        React.Component
+        const [name, setName] = useState('')
+        name='RJ'
+    
+    13. Can hooks replace the reudx?
+        - No
+        - Hooks manages the local logic, and reux manages global predictable state.
+    
+    14. Promise.race vs Promise.all?
+        - Promise race will execute only one promise which completes first
+        - Promise all will execute all the promises and then settled
+
+    15. How event loop works?
+        - call state executes synchrnous code
+        - Aysnc tasjs moves to:
+            Microtask Queue(promises)
+            macrotask Queue(setTiemout)
+        - Event loop prioriteis:
+            - Microtask
+            - Macro 
+            - check if the callstack is epmty and then push the code based on priority
+    
+    16. Mutable vs Immutable data types?
+        immutable (Primitives)
+            - string, number, boolean
+        Mutable(non-primitives)
+            - objects , array
+    
+    17. What happens in memory when copying?
+        let a = 5;
+        let b = a;
+        b =10;
+        creates separate memory
+
+        let a = {x: 1};
+        let b = a;
+        b.x=2;
+        Same reference
+
+    18. core concept of redux? or architecture of redux?
+        - Store - Single source of data
+        - Action - Js object which describes what happened
+        - Dispatcher - Sends action to store via reducer
+        - Reducer - Pure function
+        - Selector - reads the state from store
+    
+    19. What are middlewares?
+        - Middleware is a function taht sits between an action and the dispatcher
+        - will be able to delay, log the actions
+        - request -> middleware -> findal handler-> response
+        - types?
+         Thunk and saga
+         - Thunks? return the function rather than dispatching the action directly, which allows a delay of action
+         - Saga? Has the Generator function which is more efficient than async await because it has yield keyword
+    
+    20. reducer vs extrareducer?
+        - reducer:
+            - handles actions defined inside thesame slice
+            - update the slice own state
+            - autmotically generates action creator
+
+            const userSlice= createSlice({
+                name:'',
+                initialstate,
+                reducer:{
+                    action:(state)=>{
+                        return state
+                    }
+                },
+                extraReducer:()=>{
+                    builder.addcase(actionFun.pending)
+                    builder.fullfiled
+                    reject,
+                }
+            })
+        - extrareducer
+            - Handles actions not defined inside the same slice
+            - Actions from other slice
+            - Global actions can be used here

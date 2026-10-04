@@ -1,0 +1,127 @@
+Introduction to JIRA
+
+JIRA is a project management and issue tracking tool used mainly in software development.
+It helps teams plan work, track tasks, report bugs, and manage projects efficiently using Agile methodologies.
+
+JIRA is widely used to:
+
+- Track tasks and issues
+- Manage Agile projects
+- Monitor progress
+- Improve team collaboration
+
+
+Agile Model
+
+Agile is a software development approach where work is delivered in small and incremental cycles.
+It focuses on continuous feedback, improvement, and faster delivery.
+
+Key Principles of Agile
+
+- Iterative development
+- Frequent releases
+- Customer collaboration
+- Quick adaptation to changes
+- Continuous improvement
+
+JIRA supports the Agile model using Scrum boards*- and Kanban boards.
+
+
+Scrum
+
+Scrum is an Agile framework where work is divided into fixed time periods called Sprints.
+
+- Sprint duration is usually 1 to 2 weeks
+- Work is planned and delivered within each sprint
+
+Scrum Events
+
+- Sprint Planning – decide what work to do in the sprint
+- Daily Standup – short daily meeting to discuss progress
+- Sprint Review – demonstrate completed work
+- Sprint Retrospective – discuss what went well and what can improve
+
+Scrum is best when requirements change frequently.
+
+
+Kanban
+
+Kanban is an Agile method focused on continuous delivery.
+
+- No fixed sprints
+- Work items move through stages like To Do In Progress Done
+- Limits work in progress to improve efficiency
+
+Kanban is useful for support and maintenance projects.
+
+
+JIRA Boards
+
+- Scrum Board*- – used for sprint based development
+- Kanban Board*- – used for continuous workflow
+
+Boards help visualize work and track progress.
+
+
+JIRA Issues
+
+An issue is a unit of work in JIRA.
+
+Common issue types:
+
+- Story – new feature or requirement
+- Task – general work item
+- Bug – defect or issue in the application
+- Epic – large feature containing multiple stories
+
+
+JIRA Workflow
+
+Workflow represents the lifecycle of an issue.
+
+Example:
+To Do → In Progress → Testing → Done
+
+
+Testing Strategy
+
+1 Dev Testing
+
+- Done by developers
+- Unit testing and basic validation
+
+2 SIT or QA Testing
+
+- System Integration Testing
+- Performed by QA team
+- Ensures all modules work together
+
+3 UAT
+
+- User Acceptance Testing
+- Done by client or business users
+- Confirms system meets business requirements
+
+4 Regression Testing
+
+- Ensures existing functionality works after new changes
+
+5 Production Sanity Testing
+
+- Quick checks after deployment
+- Confirms application is working in production
+
+6 Production Deployment Success
+
+- Application is live
+- Monitoring for issues
+- Hotfix if needed
+
+Why JIRA is Important
+
+- Improves transparency
+- Better task tracking
+- Easy collaboration
+- Supports Agile processes
+- Helps meet deadlines
+

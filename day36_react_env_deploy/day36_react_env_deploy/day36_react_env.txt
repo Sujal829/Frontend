@@ -1,0 +1,58 @@
+ENV Variables:
+
+Evn Variables are mostly static Variables used in application
+like private keys
+App version
+API BaseURL etc
+
+server ENV variables changed no re-deployment is requried.
+If env file variables are change re-dployment is required(in CRA).
+
+How to create ENV files and variables?
+
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+hosting vs deployment
+
+Hosting:
+    App build/bundle is executed on server
+
+deployment:
+    Your code exist and is running on the server
+
+Cloud:
+AWS
+GCP
+Azure
+cloudFlare
+Firebase
+Netlify
+
+how to create a bundle or build (production)
+
+ npm run build
+        after this you would see the "dist/" folder
+ To check the build we use:
+    npm run preview
+
+Hosting on Firebase:
+- Login with Gmail account
+- Go to App Hosting
+- Create a project
+    - Add Web App
+    - create web application
+        - npm install firebase
+        - use the given SDK script and add into your project (into main or App file)
+        - npm install -g firebase-tools
+        - firebase login
+            - say no to Gemini and any othe services
+            - Get logged in to firebase
+        - Select Hosting for static web app (using space bar and Arrow) -> ENTER
+        -
+
+Netlify:
+https://docs.netlify.com/build/frameworks/framework-setup-guides/vite/

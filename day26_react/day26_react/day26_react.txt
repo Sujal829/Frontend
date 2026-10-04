@@ -1,0 +1,22 @@
+Summary:
+ Redux toolkit with functional components
+
+Documentation: https://redux-toolkit.js.org/introduction/getting-started#create-a-react-redux-app
+
+ npm install @reduxjs/toolkit
+
+ npm install react-redux
+
+ Architecture:
+
+View -> Action -> Dispatcher -> reducer -> store -> View (re-render)
+
+- Redux in nature is Synchronous 
+- to make it Asynchronous we use middlewares (Thunk and saga)
+- createAsyncThunk() is function that helps to write async logic, typically API calls
+- behaves like promises
+    - pending action-> When API call starts
+    - fulfilled  action-> when API call succeeds
+    - rejected action -> When API call fails
+
+Thunk: returns the function rather than dispatching it directly

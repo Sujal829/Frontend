@@ -1,0 +1,53 @@
+Web APIs
+  Core APIs:
+    DOMParser()- The DOMParser interface provides the ability to parse XML or HTML source code from a string into a DOM Document.
+    createDocumentFragment()
+    MutationObserver()
+    intersectionObserver
+    ResizeObserver
+
+  Rendering and Performance
+    requestAnimationFrame()
+    setTimeout, setInterval
+    requestIdleCallback()
+
+  Networking and fetching
+    fetch()
+    XMLHttpRequest
+    WebSockets
+    EventSource
+    Beacon APIs
+
+  Storage and caching
+    locastorage, sessionstorage
+    IndexedDB
+    Cache API
+    Web SQL (Deprecated)
+    Service workers
+ 
+  Secuirty and Authentication
+    Crypto API
+    CSP
+    samesite cookies
+
+  User interaction and Events
+    Clipboard API
+    Pointer Events
+    Drag and Drop API()
+    FullScreen API
+
+  Device and Browser API
+    Geolocation API
+    Network Information API
+    MediaDevices API
+    Notification API
+    Vibration API 
+
+  Web workers and multi-threading
+    web workers
+    sharedArrayBuffer 
+
+
+
+    
+    
